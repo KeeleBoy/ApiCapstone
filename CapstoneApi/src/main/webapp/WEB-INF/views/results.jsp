@@ -17,6 +17,8 @@
 </head>
 <body>
 
+<p>${result}</p>
+
 	<table>
 		<tr>
 			<th>Title</th>

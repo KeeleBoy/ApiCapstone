@@ -31,19 +31,30 @@ public class CapstoneController {
 	}
 
 	@RequestMapping("/search-results")
-	public ModelAndView searchResults(@RequestParam("search") String search, @RequestParam(value="type", required=false) String type) {
-		
+	public ModelAndView searchResults(@RequestParam("search") String search,
+			@RequestParam(value = "type", required = false) String type,
+			@RequestParam(value = "year", required = false) String year) {
+
 		List<Movie> movies;
-		if (type==null||type.isEmpty()) {
-		movies = apiServ.searchMovie(search);
-		}else{
-		movies = apiServ.searchType(search, type);
+		if ((type == null || type.isEmpty()) && (year == null || year.isEmpty())) {
+			movies = apiServ.searchMovie(search);
+		} else if (type == null || type.isEmpty()) {
+			movies = apiServ.searchYear(search, year);
+		} else if ((year == null || year.isEmpty())) {
+			movies = apiServ.searchType(search, type);
+		} else {
+			movies = apiServ.searchAll(search, year, type);
+		}
+		
+		if(movies==null||movies.isEmpty()) {
+			String result="No Results Found";
+			return new ModelAndView("results","result", result);
 		}
 
 		return new ModelAndView("results", "movies", movies);
 
 	}
-	
+
 	@RequestMapping("/search-year")
 	public ModelAndView searchYear(@RequestParam("search") String search, @RequestParam("year") String year) {
 		List<Movie> movies = apiServ.searchYear(search, year);

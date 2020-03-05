@@ -19,20 +19,26 @@
 <body>
 
 <form action="/search-results">
+<p>
+<label>Enter Title (Required)</label>
+<input name="search" placeholder="title" required>
+</p>
+
+<p>
+<label>Enter Type</label>
 <label>Movie<input type="radio" name="type" value ="movie"></label>
 <label>Game<input type="radio" name="type" value ="game"></label>
 <label>Series<input type="radio" name="type" value ="series"></label>
-<input name="search" placeholder="title">
-<button type="submit">Search</button>
+</p>
 
-</form>
-
-<form action="/search-year">
+<p><label>Enter Year</label>
 <input name="year" placeholder="year">
-<input name="search" placeholder="title">
+</p>
 <button type="submit">Search</button>
 
 </form>
+
+
 
 </body>
 </html>

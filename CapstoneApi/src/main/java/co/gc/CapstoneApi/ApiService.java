@@ -59,6 +59,13 @@ public class ApiService {
 		return response.getSearch();
 }
 	
+	public List<Movie> searchAll(String search, String year, String type) {
+		String url = ("http://www.omdbapi.com/?apikey="+apiKey +"&s="+search+"&y="+year +"&type="+type);
+		SearchResponse response = rt.getForObject(url, SearchResponse.class);
+			
+		return response.getSearch();
+}
+	
 		
 	public Movie getMovie(String id) {
 	String url = "http://www.omdbapi.com/?apikey="+apiKey+"&i="+id;
