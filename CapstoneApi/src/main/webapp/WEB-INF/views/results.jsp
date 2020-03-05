@@ -16,7 +16,7 @@
     <th>Title</th>
     <th>Date</th>
   </tr>
-  <c:forEach items="${movies }" var="movie">
+  <c:forEach items="${movies}" var="movie">
   <tr>
     <td>${movie.title }</td>
     <td>${movie.date }</td>

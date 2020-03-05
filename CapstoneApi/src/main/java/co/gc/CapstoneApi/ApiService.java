@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import co.gc.CapstoneApi.entity.Movie;
 import co.gc.CapstoneApi.entity.Search;
+import co.gc.CapstoneApi.entity.SearchResponse;
 
 @Component
 public class ApiService {
@@ -31,10 +32,14 @@ public class ApiService {
 	}
 	
 	public List<Movie> searchMovie(String search) {
-		String url = "http://www.omdbapi.com/?s="+search+"&apikey="+apiKey;
+		String url = ("http://www.omdbapi.com/?apikey="+apiKey +"&s="+search);
+				   //  http://www.omdbapi.com/?apikey=[yourkey]&
+		//http://www.omdbapi.com/?s=guardians&apikey=7c6f16b4
+		SearchResponse response = rt.getForObject(url, SearchResponse.class);
 		
-		Search s = rt.getForObject(url, Search.class);
-		return s.getMovies();
+		
+	//	System.out.println(s.toString());
+		return response.getSearch();
 }
 		
 	public Movie getMovie(String id) {
@@ -44,45 +49,20 @@ public class ApiService {
 	return movie;
 }
 	
+
 	
-	
-//				 * + lon + "&FcstType=json";
-//				 * 
-//				 * Movie movie = rt.getForObject(url, Movie.class);
-//				 * 
-//				 * return movie;
-//		
-//	}
-	
-//	
-//	public List<Card> drawCards(Integer count) {
-//
-////		// generate your own key
-//		String deckId = "s29ceirssuxj";
-//
-//		String url = "https://deckofcardsapi.com/api/deck/" + deckId + "/draw/?count=" + count;
-//
-//		DeckResponse response = rt.getForObject(url, DeckResponse.class);
-//
-//		if(response.getRemaining()<1) {
-//			
-//		}
-//		
-//		return response.getCards();
-//
-//	}
-//	
-//	/*
-//	 * public Movie findMovie() {
-//	 * 
-//	 * String url = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon="
-//	 * + lon + "&FcstType=json";
-//	 * 
-//	 * Movie movie = rt.getForObject(url, Movie.class);
-//	 * 
-//	 * return movie;
-//	 * 
-//	 * }
-//	 */
-//}
+//	public List<Doc> getArticlesFromSearch(){
+//		String url="api/newyorktimes..."+query +
+		//apiKey;   etc.
+		//^hide in the hidden application.properties file
+		
+		//ArticleSearchResponse response = rt.getForObject(url, ArticleSearchResponse.class);
+		//^gives us the outer-outer
+		
+//		ArticleResponse article = response.getResponse();
+		//^dig in one layer to get the article
+			//<--note that we're piercing the layers that we created under the 
+		//.model package
+
+
 }

@@ -4,19 +4,19 @@ import java.util.List;
 
 public class Search {
 
-	private List<Movie> movies;
+	private List<Movie> search;
 
-	public List<Movie> getMovies() {
-		return movies;
+	public List<Movie> getSearch() {
+		return search;
 	}
 
-	public void setMovies(List<Movie> movies) {
-		this.movies = movies;
+	public void setSearch(List<Movie> movies) {
+		this.search = movies;
 	}
 
 	@Override
 	public String toString() {
-		return "Search [movies=" + movies + "]";
+		return "Search [movies=" + search + "]";
 	}
 
 	public Search() {
