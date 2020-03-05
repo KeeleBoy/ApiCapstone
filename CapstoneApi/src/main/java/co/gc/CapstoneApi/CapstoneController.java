@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import co.gc.CapstoneApi.dao.MovieDao;
 import co.gc.CapstoneApi.entity.Movie;
 
 @Controller
@@ -17,6 +19,9 @@ public class CapstoneController {
 
 	@Autowired
 	private ApiService apiServ;
+
+	@Autowired
+	private MovieDao movieDao;
 
 	@RequestMapping("/")
 	public ModelAndView index() {
@@ -45,10 +50,10 @@ public class CapstoneController {
 		} else {
 			movies = apiServ.searchAll(search, year, type);
 		}
-		
-		if(movies==null||movies.isEmpty()) {
-			String result="No Results Found";
-			return new ModelAndView("results","result", result);
+
+		if (movies == null || movies.isEmpty()) {
+			String result = "No Results Found";
+			return new ModelAndView("results", "result", result);
 		}
 
 		return new ModelAndView("results", "movies", movies);
@@ -62,6 +67,14 @@ public class CapstoneController {
 
 		return new ModelAndView("results", "movies", movies);
 
+	}
+
+	@GetMapping("/movies")
+	public ModelAndView createUserList(@RequestParam("id") String id) {
+		Movie movie = apiServ.getMovie(id);
+		movieDao.save(movie);
+		List<Movie> movieList = movieDao.findAll();
+		return new ModelAndView("viewList", "view", movieList);
 	}
 
 }
