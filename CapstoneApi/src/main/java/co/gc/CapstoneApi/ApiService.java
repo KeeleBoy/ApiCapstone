@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import co.gc.CapstoneApi.entity.Movie;
-import co.gc.apidemostarter.model.Card;
-import co.gc.apidemostarter.model.DeckResponse;
 
 @Component
 public class ApiService {
@@ -31,10 +29,10 @@ public class ApiService {
 		rt = new RestTemplateBuilder().additionalInterceptors(interceptor).build();
 	}
 	
-	public List<Movie> searchMovie(String search) {
-		String url = "http://www.omdbapi.com/?apikey="+apiKey+"&?s="+search;
-		
-		Search search = rt.getForObject(url, Search.class);
+//	public List<Movie> searchMovie(String search) {
+//		String url = "http://www.omdbapi.com/?apikey="+apiKey+"&?s="+search;
+//		
+//		Search search = rt.getForObject(url, Search.class);
 		
 		
 		
@@ -44,36 +42,37 @@ public class ApiService {
 //				 * 
 //				 * return movie;
 //		
-	}
+//	}
 	
-	
-	public List<Card> drawCards(Integer count) {
-
-//		// generate your own key
-		String deckId = "s29ceirssuxj";
-
-		String url = "https://deckofcardsapi.com/api/deck/" + deckId + "/draw/?count=" + count;
-
-		DeckResponse response = rt.getForObject(url, DeckResponse.class);
-
-		if(response.getRemaining()<1) {
-			
-		}
-		
-		return response.getCards();
-
-	}
-	
-	/*
-	 * public Movie findMovie() {
-	 * 
-	 * String url = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon="
-	 * + lon + "&FcstType=json";
-	 * 
-	 * Movie movie = rt.getForObject(url, Movie.class);
-	 * 
-	 * return movie;
-	 * 
-	 * }
-	 */
+//	
+//	public List<Card> drawCards(Integer count) {
+//
+////		// generate your own key
+//		String deckId = "s29ceirssuxj";
+//
+//		String url = "https://deckofcardsapi.com/api/deck/" + deckId + "/draw/?count=" + count;
+//
+//		DeckResponse response = rt.getForObject(url, DeckResponse.class);
+//
+//		if(response.getRemaining()<1) {
+//			
+//		}
+//		
+//		return response.getCards();
+//
+//	}
+//	
+//	/*
+//	 * public Movie findMovie() {
+//	 * 
+//	 * String url = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon="
+//	 * + lon + "&FcstType=json";
+//	 * 
+//	 * Movie movie = rt.getForObject(url, Movie.class);
+//	 * 
+//	 * return movie;
+//	 * 
+//	 * }
+//	 */
+//}
 }
