@@ -58,6 +58,44 @@ public class Movie {
 		this.imdbID = imdbID;
 	}
 
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public String getActors() {
+		return actors;
+	}
+
+	public void setActors(String actors) {
+		this.actors = actors;
+	}
+
+	public String getDirector() {
+		return director;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public String getImdbRating() {
+		return imdbRating;
+	}
+
+	public void setImdbRating(String imdbRating) {
+		this.imdbRating = imdbRating;
+	}
+
+	@Override
+	public String toString() {
+		return "Movie [id=" + id + ", title=" + title + ", year=" + year + ", imdbID=" + imdbID + ", genre=" + genre
+				+ ", actors=" + actors + ", director=" + director + ", imdbRating=" + imdbRating + "]";
+	}
+
 //	public Long getId() {
 //		return id;
 //	}
@@ -66,9 +104,7 @@ public class Movie {
 //		this.id = id;
 //	}
 
-	@Override
-	public String toString() {
-		return "Movie [Title=" + title + ", Year=" + year + ", imdbID=" + imdbID + "]";
-	}
+	
+
 
 }
