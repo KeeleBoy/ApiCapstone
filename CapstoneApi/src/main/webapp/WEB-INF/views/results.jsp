@@ -15,12 +15,14 @@
   <tr>
     <th>Title</th>
     <th>Date</th>
+    <th>Type</th>
     <th>Id</th>
   </tr>
   <c:forEach items="${movies}" var="movie">
   <tr>
     <td><a href="/movie/${movie.imdbID }" name="id">${movie.title }</a></td>
     <td>${movie.year }</td>
+    <td>${movie.genre }</td>
     <td>${movie.imdbID }</td>
   </tr>
   </c:forEach>

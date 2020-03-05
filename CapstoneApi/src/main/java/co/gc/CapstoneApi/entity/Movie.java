@@ -33,6 +33,9 @@ public class Movie {
 
 	@JsonProperty("imdbRating")
 	private String imdbRating;
+	
+	@JsonProperty("Type")
+	private String Type;
 
 	public String getTitle() {
 		return title;
@@ -89,20 +92,31 @@ public class Movie {
 	public void setImdbRating(String imdbRating) {
 		this.imdbRating = imdbRating;
 	}
+	
+	
+
+	public String getType() {
+		return Type;
+	}
+
+	public void setType(String type) {
+		Type = type;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	@Override
 	public String toString() {
 		return "Movie [id=" + id + ", title=" + title + ", year=" + year + ", imdbID=" + imdbID + ", genre=" + genre
-				+ ", actors=" + actors + ", director=" + director + ", imdbRating=" + imdbRating + "]";
+				+ ", actors=" + actors + ", director=" + director + ", imdbRating=" + imdbRating + ", Type=" + Type
+				+ "]";
 	}
-
-//	public Long getId() {
-//		return id;
-//	}
-//
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
 
 	
 

@@ -16,7 +16,17 @@
 <body>
 
 <form action="/search-results">
-<input name="search">
+<label>Movie<input type="radio" name="type" value ="movie"></label>
+<label>Game<input type="radio" name="type" value ="game"></label>
+<label>Series<input type="radio" name="type" value ="series"></label>
+<input name="search" placeholder="title">
+<button type="submit">Search</button>
+
+</form>
+
+<form action="/search-year">
+<input name="year" placeholder="year">
+<input name="search" placeholder="title">
 <button type="submit">Search</button>
 
 </form>

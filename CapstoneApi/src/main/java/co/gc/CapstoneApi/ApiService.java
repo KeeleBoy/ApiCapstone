@@ -33,10 +33,32 @@ public class ApiService {
 	public List<Movie> searchMovie(String search) {
 		String url = ("http://www.omdbapi.com/?apikey="+apiKey +"&s="+search);
 		SearchResponse response = rt.getForObject(url, SearchResponse.class);
-		
-		
+			
 		return response.getSearch();
 }
+	
+//	public List<Movie> searchMovie(String search, String year) {
+//		String url = ("http://www.omdbapi.com/?apikey="+apiKey +"&s="+search+"y="+year);
+//		SearchResponse response = rt.getForObject(url, SearchResponse.class);
+//			
+//		return response.getSearch();
+//}
+	
+	
+	public List<Movie> searchYear(String search, String year) {
+		String url = ("http://www.omdbapi.com/?apikey="+apiKey +"&s="+search+"&y="+year);
+		SearchResponse response = rt.getForObject(url, SearchResponse.class);
+			
+		return response.getSearch();
+}
+	
+	public List<Movie> searchType(String search, String type) {
+		String url = ("http://www.omdbapi.com/?apikey="+apiKey +"&s="+search+"&type="+type);
+		SearchResponse response = rt.getForObject(url, SearchResponse.class);
+			
+		return response.getSearch();
+}
+	
 		
 	public Movie getMovie(String id) {
 	String url = "http://www.omdbapi.com/?apikey="+apiKey+"&i="+id;
