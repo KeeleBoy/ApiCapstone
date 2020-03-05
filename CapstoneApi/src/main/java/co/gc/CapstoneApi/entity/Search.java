@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Search {
 
-	List<Movie> movies;
+	private List<Movie> movies;
 
 	public List<Movie> getMovies() {
 		return movies;

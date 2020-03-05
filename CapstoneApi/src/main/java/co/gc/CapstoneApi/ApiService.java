@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import co.gc.CapstoneApi.entity.Movie;
+import co.gc.CapstoneApi.entity.Search;
 
 @Component
 public class ApiService {
@@ -29,13 +30,22 @@ public class ApiService {
 		rt = new RestTemplateBuilder().additionalInterceptors(interceptor).build();
 	}
 	
-//	public List<Movie> searchMovie(String search) {
-//		String url = "http://www.omdbapi.com/?apikey="+apiKey+"&?s="+search;
-//		
-//		Search search = rt.getForObject(url, Search.class);
+	public List<Movie> searchMovie(String search) {
+		String url = "http://www.omdbapi.com/?s="+search+"&apikey="+apiKey;
 		
+		Search s = rt.getForObject(url, Search.class);
+		return s.getMovies();
+}
 		
-		
+	public Movie getMovie(String id) {
+	String url = "http://www.omdbapi.com/?apikey="+apiKey+"&?i="+id;
+	
+	Movie movie = rt.getForObject(url, Movie.class);
+	return movie;
+}
+	
+	
+	
 //				 * + lon + "&FcstType=json";
 //				 * 
 //				 * Movie movie = rt.getForObject(url, Movie.class);

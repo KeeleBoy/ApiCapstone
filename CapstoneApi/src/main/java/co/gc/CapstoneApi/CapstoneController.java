@@ -1,5 +1,7 @@
 package co.gc.CapstoneApi;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,13 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import co.gc.CapstoneApi.dao.MovieDao;
+import co.gc.CapstoneApi.entity.Movie;
 
 @Controller
 
 public class CapstoneController {
-
-	@Autowired
-	MovieDao movieDao;
 
 	@Autowired
 	private ApiService apiServ;
@@ -30,10 +30,10 @@ public class CapstoneController {
 	}
 
 	@RequestMapping("/search-results")
-	public ModelAndView searchResults(@RequestParam String search) {
-		ModelAndView mav = new ModelAndView("search-results");
-		// mav.addObject("search", apiServ);
-		return mav;
+	public ModelAndView searchResults(@RequestParam("search") String search) {
+		List<Movie> movies = apiServ.searchMovie(search);
+		return new ModelAndView("results", "movies", movies);
+		
 
 	}
 

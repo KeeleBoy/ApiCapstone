@@ -15,5 +15,11 @@
 </head>
 <body>
 
+<form action="/search-results">
+<input name="search">
+<button type="submit">Search</button>
+
+</form>
+
 </body>
 </html>
