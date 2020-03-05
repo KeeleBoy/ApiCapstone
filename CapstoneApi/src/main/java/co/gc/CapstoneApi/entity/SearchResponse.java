@@ -1,23 +1,27 @@
 package co.gc.CapstoneApi.entity;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
-public class SearchResponse {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-	private List<Movie> Search;
+
+public class SearchResponse {
+	
+	@JsonProperty("Search")
+	private List<Movie> search;
 
 	public List<Movie> getSearch() {
-		return Search;
+		return search;
 	}
 
 	public void setSearch(List<Movie> search) {
-		Search = search;
+		this.search = search;
 	}
 
 	@Override
 	public String toString() {
-		return "SearchResponse [Search=" + Search + "]";
+		return "SearchResponse [Search=" + search + "]";
 	}
 
 	

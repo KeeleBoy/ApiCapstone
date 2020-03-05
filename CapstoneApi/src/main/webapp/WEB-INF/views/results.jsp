@@ -15,11 +15,13 @@
   <tr>
     <th>Title</th>
     <th>Date</th>
+    <th>Id</th>
   </tr>
   <c:forEach items="${movies}" var="movie">
   <tr>
     <td>${movie.title }</td>
-    <td>${movie.date }</td>
+    <td>${movie.year }</td>
+    <td>${movie.imdbID }</td>
   </tr>
   </c:forEach>
 </table>

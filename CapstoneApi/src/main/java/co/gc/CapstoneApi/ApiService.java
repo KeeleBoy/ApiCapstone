@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import co.gc.CapstoneApi.entity.Movie;
-import co.gc.CapstoneApi.entity.Search;
 import co.gc.CapstoneApi.entity.SearchResponse;
 
 @Component
@@ -36,9 +35,8 @@ public class ApiService {
 				   //  http://www.omdbapi.com/?apikey=[yourkey]&
 		//http://www.omdbapi.com/?s=guardians&apikey=7c6f16b4
 		SearchResponse response = rt.getForObject(url, SearchResponse.class);
+		System.out.println(response.toString());
 		
-		
-	//	System.out.println(s.toString());
 		return response.getSearch();
 }
 		

@@ -7,23 +7,20 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
+//@Entity
 public class Movie {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private Long id;
 
+	@JsonProperty("Title")
 	private String Title;
-	private String date;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	@JsonProperty("Year")
+	private String Year;
+	
+	private String imdbID;
 
 	public String getTitle() {
 		return Title;
@@ -32,18 +29,38 @@ public class Movie {
 	public void setTitle(String title) {
 		this.Title = title;
 	}
-
-	public String getDate() {
-		return date;
+	
+	public String getYear() {
+		return Year;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setYear(String year) {
+		this.Year = year;
 	}
+
+	public String getImdbID() {
+		return imdbID;
+	}
+
+	public void setImdbID(String imdbID) {
+		this.imdbID = imdbID;
+	}
+
+//	public Long getId() {
+//		return id;
+//	}
+//
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
+
+
 
 	@Override
 	public String toString() {
-		return "Movie [id=" + id + ", title=" + Title + ", date=" + date + "]";
+		return "Movie [Title=" + Title + ", Year=" + Year + ", imdbID=" + imdbID + "]";
 	}
+
+	
 
 }
