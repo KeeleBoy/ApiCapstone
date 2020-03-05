@@ -26,17 +26,16 @@ public class CapstoneController {
 	@RequestMapping("/movie/{id}")
 	public ModelAndView singleMovie(@PathVariable("id") String id) {
 		Movie movie = apiServ.getMovie(id);
-		return new ModelAndView("movie", "movie", movie );
+		return new ModelAndView("movie", "movie", movie);
 
 	}
 
 	@RequestMapping("/search-results")
 	public ModelAndView searchResults(@RequestParam("search") String search) {
 		List<Movie> movies = apiServ.searchMovie(search);
-	//	Search s = apiServ.searchMovie(search);
-		
+		// Search s = apiServ.searchMovie(search);
+
 		return new ModelAndView("results", "movies", movies);
-		
 
 	}
 

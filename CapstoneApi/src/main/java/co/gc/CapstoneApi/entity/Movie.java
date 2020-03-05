@@ -19,8 +19,20 @@ public class Movie {
 
 	@JsonProperty("Year")
 	private String year;
-	
+
 	private String imdbID;
+
+	@JsonProperty("Genre")
+	private String genre;
+
+	@JsonProperty("Actors")
+	private String actors;
+
+	@JsonProperty("Director")
+	private String director;
+
+	@JsonProperty("imdbRating")
+	private String imdbRating;
 
 	public String getTitle() {
 		return title;
@@ -29,7 +41,7 @@ public class Movie {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
+
 	public String getYear() {
 		return year;
 	}
@@ -54,13 +66,9 @@ public class Movie {
 //		this.id = id;
 //	}
 
-
-
 	@Override
 	public String toString() {
 		return "Movie [Title=" + title + ", Year=" + year + ", imdbID=" + imdbID + "]";
 	}
-
-	
 
 }
