@@ -3,7 +3,6 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-src/resources/config/application.properties
 
 ### STS ###
 .apt_generated
@@ -31,4 +30,4 @@ build/
 ### VS Code ###
 .vscode/
 
-src/main/resources/config/application.properties.
+src/main/resources/config/application.properties
