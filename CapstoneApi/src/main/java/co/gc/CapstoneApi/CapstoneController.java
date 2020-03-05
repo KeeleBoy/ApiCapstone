@@ -72,7 +72,11 @@ public class CapstoneController {
 	@GetMapping("/movies")
 	public ModelAndView createUserList(@RequestParam("id") String id) {
 		Movie movie = apiServ.getMovie(id);
-		movieDao.save(movie);
+		//To do: fix method: check if movie in list
+		String title=movie.getTitle();
+		System.out.println(title);
+		if(title != null) {
+		movieDao.save(movie);}
 		List<Movie> movieList = movieDao.findAll();
 		return new ModelAndView("viewList", "view", movieList);
 	}
