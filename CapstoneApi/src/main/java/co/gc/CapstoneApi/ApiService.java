@@ -32,18 +32,17 @@ public class ApiService {
 	
 	public List<Movie> searchMovie(String search) {
 		String url = ("http://www.omdbapi.com/?apikey="+apiKey +"&s="+search);
-				   //  http://www.omdbapi.com/?apikey=[yourkey]&
-		//http://www.omdbapi.com/?s=guardians&apikey=7c6f16b4
 		SearchResponse response = rt.getForObject(url, SearchResponse.class);
-		System.out.println(response.toString());
+		
 		
 		return response.getSearch();
 }
 		
 	public Movie getMovie(String id) {
-	String url = "http://www.omdbapi.com/?apikey="+apiKey+"&?i="+id;
+	String url = "http://www.omdbapi.com/?apikey="+apiKey+"&i="+id;
 	
 	Movie movie = rt.getForObject(url, Movie.class);
+	System.out.println(movie.toString());
 	return movie;
 }
 	

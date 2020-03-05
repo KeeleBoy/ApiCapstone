@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,9 +23,10 @@ public class CapstoneController {
 		return new ModelAndView("index");
 	}
 
-	@RequestMapping("/movie")
-	public ModelAndView singleMovie(@RequestParam String title) {
-		return new ModelAndView("movie");
+	@RequestMapping("/movie/{id}")
+	public ModelAndView singleMovie(@PathVariable("id") String id) {
+		Movie movie = apiServ.getMovie(id);
+		return new ModelAndView("movie", "movie", movie );
 
 	}
 

@@ -10,22 +10,9 @@
 <link rel ="stylesheet" href ="/MyStyle.css"/>
 </head>
 <body>
+<h3>${movie.title}</h3>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Id</th>
-  </tr>
-  <c:forEach items="${movies}" var="movie">
-  <tr>
-    <td><a href="/movie/${movie.imdbID }" name="id">${movie.title }</a></td>
-    <td>${movie.year }</td>
-    <td>${movie.imdbID }</td>
-  </tr>
-  </c:forEach>
-</table>
-
+<p>${movie.year }</p>
 
 </body>
 </html>
