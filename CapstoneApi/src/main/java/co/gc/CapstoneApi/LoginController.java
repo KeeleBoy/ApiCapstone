@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import co.gc.CapstoneApi.dao.MovieDao;
+import co.gc.CapstoneApi.dao.UserDao;
 import co.gc.CapstoneApi.entity.User;
 
 @Controller
@@ -18,7 +18,7 @@ import co.gc.CapstoneApi.entity.User;
 public class LoginController {
 
 	@Autowired
-	private MovieDao movieDao;
+	private UserDao userDao;
 
 	@Autowired
 	private HttpSession sesh;
@@ -33,7 +33,7 @@ public class LoginController {
 	public ModelAndView loginSubmit(@RequestParam("username") String username,
 			@RequestParam("password") String password, RedirectAttributes redir) {
 
-		User user = movieDao.findByUsernameIgnoreCase(username);
+		User user = userDao.findByNameIgnoreCase(username);
 
 		if (user == null || !password.equals(user.getPassword())) {
 			ModelAndView mav = new ModelAndView("login-form");
@@ -61,12 +61,12 @@ public class LoginController {
 
 	@RequestMapping("/user-add")
 	public ModelAndView addTrainer() {
-		return new ModelAndView("trainer-add");
+		return new ModelAndView("user-add");
 	}
 
 	@PostMapping("/user-add")
 	public ModelAndView AddTrainer(User user) {
-		movieDao.save(user);
+		userDao.save(user);
 		return new ModelAndView("redirect:/");
 	}
 

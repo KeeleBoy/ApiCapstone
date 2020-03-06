@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -48,7 +49,19 @@ public class Movie {
 	@JsonProperty("Type")
 	private String Type;
 
+	@ManyToOne
+	private User User;
 	
+	
+	
+	public User getUser() {
+		return User;
+	}
+
+	public void setUser(User user) {
+		User = user;
+	}
+
 	public boolean getFavorite() {
 		return favorite;
 	}
