@@ -37,9 +37,6 @@
 						<button type="submit" name="id" value="${movie.imdbID }">Add
 							to Viewlist</button>
 					</form></td>
-				<td><form action="/movies">
-						<button type="submit" name="favorite" value="${movie.imdbID }">${fav}</button>
-					</form></td>
 			</tr>
 		</c:forEach>
 	</table>

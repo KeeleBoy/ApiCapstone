@@ -30,6 +30,15 @@
 				<td>${movie.type}</td>
 				<td>${movie.year}</td>
 				<td><form action="/delete"><button type="submit" name="id" value="${movie.imdbID }">Delete</button></form></td>
+				<td><form action="/favorite"><button name="id" value="${movie.imdbID }"> 
+								<c:choose>
+  									<c:when test="${movie.favorite}">
+  										Yes
+									  </c:when>
+									  <c:when test="${!movie.favorite}">
+									  	No
+										</c:when>
+										</c:choose></button></form>
 			</tr>
 
 		</c:forEach>
