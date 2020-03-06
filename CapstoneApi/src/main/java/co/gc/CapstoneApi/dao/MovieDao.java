@@ -6,8 +6,11 @@ import co.gc.CapstoneApi.entity.Movie;
 import co.gc.CapstoneApi.entity.User;
 
 public interface MovieDao extends JpaRepository<Movie, Long> {
-	
+
 	Movie findByTitleIgnoreCase(String name);
 
 	User findByUsernameIgnoreCase(String username);
+
+	Movie findByImdbID(String id);
+
 }
