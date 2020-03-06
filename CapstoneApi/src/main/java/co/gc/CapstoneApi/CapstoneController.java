@@ -88,13 +88,28 @@ public class CapstoneController {
 			movieDao.save(movie);
 		}
 		List<Movie> movieList = movieDao.findAll();
-		ModelAndView mav = new ModelAndView("viewList");
+		ModelAndView mav = new ModelAndView("view-list");
 		mav.addObject("view", movieList);
 
 		mav.addObject("fav", fav);
 
 		return mav;
 
+	}
+	
+	@RequestMapping("/delete")
+	public ModelAndView deleteMovie(@RequestParam("id") String id) {
+		Movie movie = movieDao.findByImdbID(id);
+		System.out.println(movie.toString());
+		movieDao.delete(movie);
+		return new ModelAndView("redirect:/viewlist");
+
+	}
+	
+	@RequestMapping("/viewlist")
+	public ModelAndView viewList() {
+		List <Movie> movies = movieDao.findAll();
+		return new ModelAndView("view-list", "view", movies);
 	}
 
 }

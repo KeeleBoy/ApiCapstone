@@ -29,13 +29,12 @@
 				<td>${movie.title}</td>
 				<td>${movie.type}</td>
 				<td>${movie.year}</td>
+				<td><form action="/delete"><button type="submit" name="id" value="${movie.imdbID }">Delete</button></form></td>
 			</tr>
 
 		</c:forEach>
 
 	</table>
-
-
 
 
 </body>
