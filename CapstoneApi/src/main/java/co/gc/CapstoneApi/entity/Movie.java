@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -22,14 +23,8 @@ public class Movie {
 				+ imdbID + ", genre=" + genre + ", actors=" + actors + ", director=" + director + ", imdbRating="
 				+ imdbRating + ", Type=" + Type + "]";
 	}
-
-	public boolean getFavorite() {
-		return favorite;
-	}
-
-	public void setFavorite(boolean favorite) {
-		this.favorite = favorite;
-	}
+	
+	
 
 	@JsonProperty("Title")
 	private String title;
@@ -54,6 +49,28 @@ public class Movie {
 	@JsonProperty("Type")
 	private String Type;
 
+	@ManyToOne
+	private User User;
+	
+	
+	
+	public User getUser() {
+		return User;
+	}
+
+	public void setUser(User user) {
+		User = user;
+	}
+
+	public boolean getFavorite() {
+		return favorite;
+	}
+
+	public void setFavorite(boolean favorite) {
+		this.favorite = favorite;
+	}
+	
+	
 	public String getTitle() {
 		return title;
 	}
