@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<p>${result}</p>
+	<p>${result}</p>
 
 	<table class="table">
 		<tr>
@@ -25,6 +25,7 @@
 			<th>Date</th>
 			<th>Type</th>
 			<th>Id</th>
+			<th>Favorite?</th>
 		</tr>
 		<c:forEach items="${movies}" var="movie">
 			<tr>
@@ -32,7 +33,13 @@
 				<td>${movie.year }</td>
 				<td>${movie.genre }</td>
 				<td>${movie.imdbID }</td>
-				<td><form action="/movies"><button type="submit" name="id" value ="${movie.imdbID }">Add to Viewlist</button></form></td>
+				<td><form action="/movies">
+						<button type="submit" name="id" value="${movie.imdbID }">Add
+							to Viewlist</button>
+					</form></td>
+				<td><form action="/movies">
+						<button type="submit" name="favorite" value="${movie.imdbID }">${fav}</button>
+					</form></td>
 			</tr>
 		</c:forEach>
 	</table>

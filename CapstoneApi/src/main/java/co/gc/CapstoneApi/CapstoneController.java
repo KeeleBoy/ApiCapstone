@@ -72,13 +72,29 @@ public class CapstoneController {
 	@GetMapping("/movies")
 	public ModelAndView createUserList(@RequestParam("id") String id) {
 		Movie movie = apiServ.getMovie(id);
-		//To do: fix method: check if movie in list
-		String title=movie.getTitle();
+		// To do: fix method: check if movie in list
+		String title = movie.getTitle();
+		boolean favorite = movie.getFavorite();
+		String fav;
+
+		if (movie.getFavorite()) {
+			fav = "yes";
+		} else {
+			fav = "no";
+		}
+
 		System.out.println(title);
-		if(title != null) {
-		movieDao.save(movie);}
+		if (title != null) {
+			movieDao.save(movie);
+		}
 		List<Movie> movieList = movieDao.findAll();
-		return new ModelAndView("viewList", "view", movieList);
+		ModelAndView mav = new ModelAndView("viewList");
+		mav.addObject("view", movieList);
+
+		mav.addObject("fav", fav);
+
+		return mav;
+
 	}
 
 }

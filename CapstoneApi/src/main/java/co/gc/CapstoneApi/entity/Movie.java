@@ -14,6 +14,23 @@ public class Movie {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	private boolean favorite;
+
+	@Override
+	public String toString() {
+		return "Movie [id=" + id + ", favorite=" + favorite + ", title=" + title + ", year=" + year + ", imdbID="
+				+ imdbID + ", genre=" + genre + ", actors=" + actors + ", director=" + director + ", imdbRating="
+				+ imdbRating + ", Type=" + Type + "]";
+	}
+
+	public boolean getFavorite() {
+		return favorite;
+	}
+
+	public void setFavorite(boolean favorite) {
+		this.favorite = favorite;
+	}
+
 	@JsonProperty("Title")
 	private String title;
 
@@ -33,7 +50,7 @@ public class Movie {
 
 	@JsonProperty("imdbRating")
 	private String imdbRating;
-	
+
 	@JsonProperty("Type")
 	private String Type;
 
@@ -92,8 +109,6 @@ public class Movie {
 	public void setImdbRating(String imdbRating) {
 		this.imdbRating = imdbRating;
 	}
-	
-	
 
 	public String getType() {
 		return Type;
@@ -110,15 +125,5 @@ public class Movie {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	@Override
-	public String toString() {
-		return "Movie [id=" + id + ", title=" + title + ", year=" + year + ", imdbID=" + imdbID + ", genre=" + genre
-				+ ", actors=" + actors + ", director=" + director + ", imdbRating=" + imdbRating + ", Type=" + Type
-				+ "]";
-	}
-
-	
-
 
 }
