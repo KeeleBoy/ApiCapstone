@@ -2,8 +2,7 @@
 
 	<ul class="nav-bar mr-auto">
 		<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-		<li class="nav-item"><a href="/movie" class="nav-link">Movie
-				page</a></li>
+		<li class="nav-item"><a href="/viewlist" class="nav-link">View List</a></li>
 
 
 
