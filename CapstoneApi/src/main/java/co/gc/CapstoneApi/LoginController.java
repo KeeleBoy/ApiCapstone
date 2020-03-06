@@ -30,10 +30,10 @@ public class LoginController {
 	}
 
 	@PostMapping("/login")
-	public ModelAndView loginSubmit(@RequestParam("username") String username,
-			@RequestParam("password") String password, RedirectAttributes redir) {
+	public ModelAndView loginSubmit(@RequestParam("name") String name, @RequestParam("password") String password,
+			RedirectAttributes redir) {
 
-		User user = userDao.findByNameIgnoreCase(username);
+		User user = userDao.findByNameIgnoreCase(name);
 
 		if (user == null || !password.equals(user.getPassword())) {
 			ModelAndView mav = new ModelAndView("login-form");
@@ -45,7 +45,7 @@ public class LoginController {
 
 		redir.addFlashAttribute("message", "Logged you in " + user.getName());
 
-		return new ModelAndView("redirect:/trainer/" + user.getId());
+		return new ModelAndView("redirect:/viewlist");
 
 	}
 

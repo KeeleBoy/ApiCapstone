@@ -12,22 +12,30 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="/style.css" />
 <meta charset="ISO-8859-1">
-<title>Add new user!</title>
+<title>Login</title>
 </head>
 <body>
-
-	<%@ include file="partials/header.jsp"%>
-
 	<main>
-		<section class="container-fluid">
-			<form method="post">
-				<label>User-name</label> <input type="text" name="name" required>
-				<label>Password</label> <input type="password" name="password"
-					required>
+		<section class="container">
 
-				<button type="submit" class="btn btn-danger">Create</button>
-			</form>
-			<a href="/">Cancel</a>
+			<div class="card text-center"></div>
+			<div class="card-header">
+				<h4>${message}</h4>
+			</div>
+
+			<h2>Login</h2>
+			<div class="card-body">
+
+				<form action="/login" method="post">
+					<label>Name</label> <input name="name" type="text" required>
+					<label>Password</label> <input name="password" type="password"
+						required>
+					<button type="submit">Login!</button>
+
+				</form>
+
+			</div>
+
 		</section>
 
 	</main>
