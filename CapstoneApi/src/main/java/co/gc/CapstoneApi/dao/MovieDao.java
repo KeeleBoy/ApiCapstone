@@ -13,4 +13,6 @@ public interface MovieDao extends JpaRepository<Movie, Long> {
 
 	Movie findByImdbID(String id);
 
+	User save(User user);
+
 }

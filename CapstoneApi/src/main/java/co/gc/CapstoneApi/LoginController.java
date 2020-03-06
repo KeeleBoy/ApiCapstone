@@ -59,4 +59,15 @@ public class LoginController {
 
 	}
 
+	@RequestMapping("/user-add")
+	public ModelAndView addTrainer() {
+		return new ModelAndView("trainer-add");
+	}
+
+	@PostMapping("/user-add")
+	public ModelAndView AddTrainer(User user) {
+		movieDao.save(user);
+		return new ModelAndView("redirect:/");
+	}
+
 }
