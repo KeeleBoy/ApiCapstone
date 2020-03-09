@@ -1,5 +1,11 @@
 package co.gc.CapstoneApi;
 
+/* Team Project by:
+ * David Breitenbeck
+ * Kyle Wolverton
+ * Bill Wilt
+ */
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
