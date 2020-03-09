@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Let's take a trip</title>
+<title>Flickbuster Movies</title>
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 	<div class="bg">
+	<a href="/"> <img src="/images/movie-project-overlay.png" alt="logo and menu overlay" width="100%" /> </a>
 		<div class="center3">
 
 			<form action="/search-results">
@@ -18,10 +19,10 @@
 				</p>
 
 				<p>
-					<label>Enter Type</label> <label>Movie<input type="radio"
-						name="type" value="movie"></label> <label>Game<input
-						type="radio" name="type" value="game"></label> <label>Series<input
-						type="radio" name="type" value="series"></label>
+					Choose Type &nbsp; &nbsp;
+					<label>Movie<input type="radio" name="type" value="movie"></label>
+					<label>Game<input type="radio" name="type" value="game"></label>
+					<label>Series<input type="radio" name="type" value="series"></label>
 				</p>
 
 				<p>

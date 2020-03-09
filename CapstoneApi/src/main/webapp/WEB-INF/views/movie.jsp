@@ -5,20 +5,26 @@
 <html>
 <head>
 
-<%@ include file="partials/header.jsp"%>
-
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Individual Item Page</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/MyStyle.css" />
+<link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+
+	<div class="bg">
+	<a href="/"> <img src="/images/movie-project-overlay.png" alt="logo and menu overlay" width="100%" /> </a>
+		<div class="center3">
+
 	<h3>${movie.title}</h3>
 
-	<p>${movie.year }</p>
+	<p>Released in ${movie.year }</p>
+
+</div>
+</div>
 
 </body>
 </html>

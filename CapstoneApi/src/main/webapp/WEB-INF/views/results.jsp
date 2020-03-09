@@ -5,21 +5,24 @@
 <html>
 <head>
 
-<%@ include file="partials/header.jsp"%>
 
 <meta charset="UTF-8">
-<title>Result</title>
+<title>Search Results</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/MyStyle.css" />
+<link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 
+	<div class="bg">
+	<a href="/"> <img src="/images/movie-project-overlay.png" alt="logo and menu overlay" width="100%" /> </a>
+		<div class="center2">
+
 	<p>${result}</p>
 
-	<table class="table">
+	<table class="table-sm">
 		<tr>
 			<th>Title</th>
 			<th>Date</th>
@@ -41,6 +44,7 @@
 		</c:forEach>
 	</table>
 
-
+</div>
+</div>
 </body>
 </html>

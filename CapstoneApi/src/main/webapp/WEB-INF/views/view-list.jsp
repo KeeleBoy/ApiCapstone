@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="partials/header.jsp"%>
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -16,8 +15,12 @@
 <title>View List</title>
 </head>
 <body>
-	<h1>View list!</h1>
 
+	<div class="bg">
+	<a href="/"> <img src="/images/movie-project-overlay.png" alt="logo and menu overlay" width="100%" /> </a>
+		<div class="center3">
+
+	<h1>View list!</h1>
 
 	<table>
 		<tr>
@@ -51,7 +54,8 @@
 		</c:forEach>
 
 	</table>
-
+</div>
+</div>
 
 </body>
 </html>
