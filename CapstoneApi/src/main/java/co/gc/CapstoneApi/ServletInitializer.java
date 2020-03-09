@@ -9,5 +9,10 @@ public class ServletInitializer extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(CapstoneApiApplication.class);
 	}
+	
+//	@Override
+//	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//		return application.sources(SessionsDemoApplication.class);
+//	}
 
 }

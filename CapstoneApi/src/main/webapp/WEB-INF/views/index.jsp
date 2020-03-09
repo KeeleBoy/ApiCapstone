@@ -10,7 +10,7 @@
 <body>
 	<div class="bg">
 		<div class="center3">
-
+<p>Welcome, ${user.name }</p>
 			<form action="/search-results">
 				<p>
 					<label>Enter Title (Required)</label> <input name="search"

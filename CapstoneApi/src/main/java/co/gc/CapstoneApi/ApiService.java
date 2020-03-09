@@ -71,7 +71,7 @@ public class ApiService {
 	String url = "http://www.omdbapi.com/?apikey="+apiKey+"&i="+id;
 	
 	Movie movie = rt.getForObject(url, Movie.class);
-	System.out.println(movie.toString());
+	//System.out.println(movie.toString());
 	return movie;
 }
 	

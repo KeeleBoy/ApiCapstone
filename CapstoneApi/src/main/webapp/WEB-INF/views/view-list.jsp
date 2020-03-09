@@ -17,7 +17,7 @@
 </head>
 <body>
 	<h1>View list!</h1>
-
+<p>Logged in, ${user.name }</p>
 
 	<table>
 		<tr>

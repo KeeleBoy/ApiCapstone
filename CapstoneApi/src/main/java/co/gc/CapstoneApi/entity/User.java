@@ -1,31 +1,31 @@
 package co.gc.CapstoneApi.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
-
-public class User {
+public class User implements Serializable {
+	
+	private static final long serialVersionUID =1L;
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	
-	@OneToMany(mappedBy="User")
+	
+	@ManyToMany
 	private List<Movie> movies;
 	
 	private String password;
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", movies=" + movies + ", password=" + password + "]";
-	}
 
 	public String getPassword() {
 		return password;
@@ -58,5 +58,24 @@ public class User {
 	public void setMovies(List<Movie> movies) {
 		this.movies = movies;
 	}
+
+	public void addMovie(Movie movie) {
+		this.movies.add(movie);
+	}
+	
+	
+	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", password=" + password + "]";
+	}
+
+	
+	
+	
 
 }

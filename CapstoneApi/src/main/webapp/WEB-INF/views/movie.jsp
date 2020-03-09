@@ -16,7 +16,10 @@
 <link rel="stylesheet" href="/MyStyle.css" />
 </head>
 <body>
+
+
 	<h3>${movie.title}</h3>
+
 
 	<p>${movie.year }</p>
 

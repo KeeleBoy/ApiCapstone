@@ -1,10 +1,12 @@
 package co.gc.CapstoneApi.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,16 +17,7 @@ public class Movie {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private boolean favorite;
-
-	@Override
-	public String toString() {
-		return "Movie [id=" + id + ", favorite=" + favorite + ", title=" + title + ", year=" + year + ", imdbID="
-				+ imdbID + ", genre=" + genre + ", actors=" + actors + ", director=" + director + ", imdbRating="
-				+ imdbRating + ", Type=" + Type + "]";
-	}
-	
-	
+	private boolean favorite;	
 
 	@JsonProperty("Title")
 	private String title;
@@ -49,17 +42,20 @@ public class Movie {
 	@JsonProperty("Type")
 	private String Type;
 
-	@ManyToOne
-	private User User;
+	@ManyToMany
+	private List<User> users;
 	
-	
-	
-	public User getUser() {
-		return User;
+
+	public List<User> getUsers() {
+		return users;
 	}
 
-	public void setUser(User user) {
-		User = user;
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
+	public void addUser(User user) {
+		this.users.add(user);
 	}
 
 	public boolean getFavorite() {
@@ -142,5 +138,15 @@ public class Movie {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "Movie [id=" + id + ", favorite=" + favorite + ", title=" + title + ", year=" + year + ", imdbID="
+				+ imdbID + ", genre=" + genre + ", actors=" + actors + ", director=" + director + ", imdbRating="
+				+ imdbRating + ", Type=" + Type + ", users=" + users + "]";
+	}
+
+	
+	
 
 }

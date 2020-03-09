@@ -1,6 +1,7 @@
 package co.gc.CapstoneApi;
 
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,8 @@ public class LoginController {
 
 	@Autowired
 	private HttpSession sesh;
+	
+	
 
 	@RequestMapping("/login")
 	public ModelAndView login() {
