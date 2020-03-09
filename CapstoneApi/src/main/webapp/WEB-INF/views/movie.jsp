@@ -20,8 +20,6 @@
 		<div class="center3">
 
 	<h3>${movie.title}</h3>
-	<p><img src ="url(${movie.poster })" width="250" height ="400"></p>
-	
 	<h5>${movie.type}</h5>
 
 <table>
