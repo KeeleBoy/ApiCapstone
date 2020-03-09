@@ -31,7 +31,7 @@
 		<c:forEach var="movie" items="${view}">
 
 			<tr>
-				<td>${movie.title}</td>
+				<td><a href="/movie/${movie.imdbID }" name="id">${movie.title }</a></td>
 				<td>${movie.type}</td>
 				<td>${movie.year}</td>
 				<td><form action="/delete">
