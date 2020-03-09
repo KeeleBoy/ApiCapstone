@@ -18,15 +18,17 @@
 
 	<div class="bg">
 	<a href="/"> <img src="/images/movie-project-overlay.png" alt="logo and menu overlay" width="100%" /> </a>
-		<div class="center3">
+		<div class="center2">
 
-	<h1>View list!</h1>
+	<h1>View List!</h1>
 
-	<table>
+	<table class="table-sm">
 		<tr>
 			<th>Title</th>
 			<th>Type</th>
 			<th>Year</th>
+			<th>Delete</th>
+			<th>Favorite</th>
 		</tr>
 		<c:forEach var="movie" items="${view}">
 
@@ -35,10 +37,10 @@
 				<td>${movie.type}</td>
 				<td>${movie.year}</td>
 				<td><form action="/delete">
-						<button type="submit" name="id" value="${movie.imdbID }">Delete</button>
+						<button type="submit" class="btn btn-secondary btn-sm" name="id" value="${movie.imdbID }">Delete</button>
 					</form></td>
 				<td><form action="/favorite">
-						<button name="id" value="${movie.imdbID }">
+						<button name="id" class="btn btn-secondary btn-sm" value="${movie.imdbID }">
 							<c:choose>
 								<c:when test="${movie.favorite}">
   										Yes
@@ -54,6 +56,7 @@
 		</c:forEach>
 
 	</table>
+	<br> <a class="btn btn-primary" href="/" role="button">Show the search page</a>
 </div>
 </div>
 

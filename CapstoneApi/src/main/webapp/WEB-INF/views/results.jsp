@@ -37,7 +37,7 @@
 				<td>${movie.genre }</td>
 				<td>${movie.imdbID }</td>
 				<td><form action="/movies">
-						<button type="submit" name="id" value="${movie.imdbID }">Add
+						<button type="submit" class="btn btn-secondary btn-sm" name="id" value="${movie.imdbID }">Add
 							to Viewlist</button>
 					</form></td>
 			</tr>

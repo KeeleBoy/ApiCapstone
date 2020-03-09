@@ -40,7 +40,7 @@
   </tr>
 </table>
 
-<a href="/">Back to Search</a>
+<br><a class="btn btn-primary" href="/" role="button">Back to the Search Page</a>
 	
 
 </div>
