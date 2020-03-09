@@ -20,8 +20,30 @@
 		<div class="center3">
 
 	<h3>${movie.title}</h3>
+	<p><img src ="url(${movie.poster })" width="250" height ="400"></p>
+	
+	<h5>${movie.type}</h5>
 
-	<p>Released in ${movie.year }</p>
+<table>
+  <tr>
+    <th>Release Year</th>
+    <th>Genre</th>
+    <th>Director</th>
+    <th>Main Cast</th>
+    <th>Imdb Rating</th>
+    
+  </tr>
+  <tr>
+    <td>${movie.year }</td>
+    <td>${movie.genre }</td>
+    <td>${movie.director }</td>
+    <td>${movie.actors }</td>
+    <td>${movie.imdbRating }</td>
+  </tr>
+</table>
+
+<a href="/">Back to Search</a>
+	
 
 </div>
 </div>

@@ -48,12 +48,25 @@ public class Movie {
 
 	@JsonProperty("Type")
 	private String Type;
+	
+	@JsonProperty("Poster")
+	private String Poster;
 
 	@ManyToOne
 	private User User;
 	
 	
 	
+	
+	
+	public String getPoster() {
+		return Poster;
+	}
+
+	public void setPoster(String poster) {
+		Poster = poster;
+	}
+
 	public User getUser() {
 		return User;
 	}
