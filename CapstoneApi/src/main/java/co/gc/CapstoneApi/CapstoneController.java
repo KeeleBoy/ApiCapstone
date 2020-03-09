@@ -75,7 +75,8 @@ public class CapstoneController {
 		// To do: fix method: check if movie in list
 		
 		if(movie==null) {
-			movieDao.save(movie);
+			Movie newmovie = apiServ.getMovie(id);
+			movieDao.save(newmovie);
 		}
 		
 		List<Movie> movieList = movieDao.findAll();
