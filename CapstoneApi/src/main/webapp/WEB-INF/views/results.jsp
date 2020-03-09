@@ -18,7 +18,7 @@
 
 	<div class="bg">
 	<a href="/"> <img src="/images/movie-project-overlay.png" alt="logo and menu overlay" width="100%" /> </a>
-		<div class="center2">
+		<div class="center4">
 
 	<p>${result}</p>
 
